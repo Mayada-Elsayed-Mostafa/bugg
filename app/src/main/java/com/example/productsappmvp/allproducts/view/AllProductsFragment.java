@@ -52,7 +52,7 @@ public class AllProductsFragment extends Fragment implements OnAllProductsClickL
 
         allProductsImp.getData();
 
-        productsAdapter = new AllProductsAdapter(new ArrayList<>(), context, this, false);
+        productsAdapter = new AllProductsAdapter(new ArrayList<>(), getContext(), this, false);
         allRecyclerView.setAdapter(productsAdapter);
         allRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }

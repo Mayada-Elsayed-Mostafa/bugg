@@ -53,28 +53,29 @@ public class AllProductsAdapter extends RecyclerView.Adapter<AllProductsAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(context).inflate(R.layout.product_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-//        Product product = productList.get(position);
-//
-//        Log.d("ImageURL", "URL: " + product.getThumbnail());
-//        Glide.with(context)
-//                .load(product.getThumbnail())
-//                .into(holder.productIV);
-//        holder.titleTV.setText(product.getTitle());
-//        holder.priceTV.setText(String.format("$%.2f", product.getPrice()));
-//        holder.brandTV.setText(product.getBrand());
-//        holder.descTV.setText(product.getDescription());
-//        holder.ratingBar.setRating((float) product.getRating());
-//
-//        // cond
-//        if (isFav) {
-//            holder.add.setOnClickListener(v -> listener2.onFavProductClicked(product));
-//        } else holder.add.setOnClickListener(v -> listener.onAddProductClicked(product));
+        Product product = productList.get(position);
+
+        Log.d("ImageURL", "URL: " + product.getThumbnail());
+        Glide.with(context)
+                .load(product.getThumbnail())
+                .into(holder.productIV);
+        holder.titleTV.setText(product.getTitle());
+        holder.priceTV.setText(String.format("$%.2f", product.getPrice()));
+        holder.brandTV.setText(product.getBrand());
+        holder.descTV.setText(product.getDescription());
+        holder.ratingBar.setRating((float) product.getRating());
+
+        // cond
+        if (isFav) {
+            holder.add.setOnClickListener(v -> listener2.onFavProductClicked(product));
+        } else holder.add.setOnClickListener(v -> listener.onAddProductClicked(product));
 
     }
 
@@ -91,13 +92,13 @@ public class AllProductsAdapter extends RecyclerView.Adapter<AllProductsAdapter.
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-//            productIV = itemView.findViewById(R.id.product_iv);
-//            titleTV = itemView.findViewById(R.id.titleValue_tv);
-//            priceTV = itemView.findViewById(R.id.priceValue_tv);
-//            brandTV = itemView.findViewById(R.id.brandValue_tv);
-//            descTV = itemView.findViewById(R.id.descriptionValue_tv);
-//            ratingBar = itemView.findViewById(R.id.rating_star);
-//            add = itemView.findViewById(R.id.btn_add);
+            productIV = itemView.findViewById(R.id.product_iv);
+            titleTV = itemView.findViewById(R.id.titleValue_tv);
+            priceTV = itemView.findViewById(R.id.priceValue_tv);
+            brandTV = itemView.findViewById(R.id.brandValue_tv);
+            descTV = itemView.findViewById(R.id.descriptionValue_tv);
+            ratingBar = itemView.findViewById(R.id.rating_star);
+            add = itemView.findViewById(R.id.btn_add);
         }
     }
 }
